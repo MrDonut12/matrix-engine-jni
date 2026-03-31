@@ -1,4 +1,5 @@
-#include <../include/matrix.h>
+#include "../include/matrix.h"
+#include <string>
 #include <stdexcept>
 
 namespace {

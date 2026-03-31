@@ -1,4 +1,4 @@
-package com.mrdonut.matrix.natvebridge
+package com.mrdonut.matrix.nativebridge;
 
 public class NativeMatrix {
 
@@ -7,8 +7,12 @@ public class NativeMatrix {
     }
 
     public native int[][] matrixAddition(int[][] left, int[][] right);
+
     public native int[][] matrixSubtraction(int[][] left, int[][] right);
+
     public native int[][] matrixMultiplication(int[][] left, int[][] right);
+
     public native int[][] scalarMultiplication(int[][] matrix, int scalar);
+
     public native int[][] transposeMatrix(int[][] matrix);
 }
