@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+  <defs>
+    <style>
+      .title { font: 700 30px 'Segoe UI', Arial, sans-serif; fill: #16324f; }
+      .subtitle { font: 400 16px 'Segoe UI', Arial, sans-serif; fill: #486581; }
+      .layer { fill: #f7fafc; stroke: #9fb3c8; stroke-width: 2; rx: 20; ry: 20; }
+      .layer-title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #102a43; }
+      .box { fill: #ffffff; stroke: #486581; stroke-width: 2; rx: 14; ry: 14; }
+      .box-title { font: 700 18px 'Consolas', 'Courier New', monospace; fill: #102a43; }
+      .box-text { font: 15px 'Consolas', 'Courier New', monospace; fill: #243b53; }
+      .muted { fill: #f8f9fb; stroke: #94a3b8; stroke-dasharray: 8 6; }
+      .muted-title { font: 700 18px 'Consolas', 'Courier New', monospace; fill: #64748b; }
+      .muted-text { font: 15px 'Consolas', 'Courier New', monospace; fill: #64748b; }
+      .note { fill: #fff7d6; stroke: #d4b24c; stroke-width: 1.8; rx: 12; ry: 12; }
+      .note-text { font: 15px 'Segoe UI', Arial, sans-serif; fill: #6b4f00; }
+      .arrow { stroke: #1f2937; stroke-width: 2.4; fill: none; }
+      .arrow-label { font: 14px 'Segoe UI', Arial, sans-serif; fill: #334e68; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937" />
+    </marker>
+    <marker id="arrow-dashed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1100" fill="#eef5fb" />
+  <text x="60" y="60" class="title">Matrix Engine JNI - System Structure UML</text>
+  <text x="60" y="92" class="subtitle">Derived from the current codebase in D:\GITHUB\matrix-engine-jni</text>
+
+  <rect x="50" y="130" width="1500" height="220" class="layer" />
+  <text x="75" y="165" class="layer-title">Java Layer</text>
+
+  <rect x="90" y="195" width="260" height="120" class="box" />
+  <text x="110" y="225" class="box-title">model.Matrix</text>
+  <line x1="100" y1="238" x2="340" y2="238" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="110" y="264" class="box-text">- values: int[][]</text>
+  <line x1="100" y1="278" x2="340" y2="278" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="110" y="304" class="box-text">+ Matrix(values)</text>
+  <text x="110" y="326" class="box-text">+ getRows(), getCols()</text>
+  <text x="110" y="348" class="box-text">+ toArray(), toString()</text>
+
+  <rect x="400" y="185" width="360" height="140" class="box" />
+  <text x="420" y="215" class="box-title">nativebridge.NativeMatrix</text>
+  <line x1="410" y1="228" x2="750" y2="228" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="420" y="254" class="box-text">static { System.loadLibrary("matrix"); }</text>
+  <line x1="410" y1="268" x2="750" y2="268" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="420" y="294" class="box-text">+ matrixAddition(left, right)</text>
+  <text x="420" y="316" class="box-text">+ matrixSubtraction(left, right)</text>
+  <text x="420" y="338" class="box-text">+ matrixMultiplication(left, right)</text>
+  <text x="420" y="360" class="box-text">+ scalarMultiplication(matrix, scalar)</text>
+  <text x="420" y="382" class="box-text">+ transposeMatrix(matrix)</text>
+
+  <rect x="820" y="175" width="200" height="150" class="muted" />
+  <text x="840" y="205" class="muted-title">Main</text>
+  <line x1="830" y1="218" x2="1010" y2="218" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="840" y="250" class="muted-text">current file is empty</text>
+  <text x="840" y="274" class="muted-text">likely entry point</text>
+
+  <rect x="1060" y="175" width="220" height="150" class="muted" />
+  <text x="1080" y="205" class="muted-title">controller.MatrixController</text>
+  <line x1="1070" y1="218" x2="1270" y2="218" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="1080" y="250" class="muted-text">current file is empty</text>
+  <text x="1080" y="274" class="muted-text">controller role reserved</text>
+
+  <rect x="1310" y="175" width="200" height="150" class="muted" />
+  <text x="1330" y="205" class="muted-title">service.MatrixService</text>
+  <line x1="1320" y1="218" x2="1500" y2="218" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="1330" y="250" class="muted-text">current file is empty</text>
+  <text x="1330" y="274" class="muted-text">service role reserved</text>
+
+  <rect x="50" y="390" width="1500" height="250" class="layer" />
+  <text x="75" y="425" class="layer-title">JNI Adapter Layer</text>
+
+  <rect x="130" y="455" width="520" height="145" class="box" />
+  <text x="150" y="485" class="box-title">cpp/src/jni_bridge.cpp</text>
+  <line x1="140" y1="498" x2="640" y2="498" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="150" y="524" class="box-text">- throwIllegalArgument(env, message)</text>
+  <text x="150" y="546" class="box-text">- toNativeMatrix(env, jobjectArray): MatrixData</text>
+  <text x="150" y="568" class="box-text">- toJavaMatrix(env, MatrixData): jobjectArray</text>
+  <text x="150" y="590" class="box-text">+ Java_* JNI entry points for 5 native methods</text>
+
+  <rect x="760" y="455" width="360" height="145" class="box" />
+  <text x="780" y="485" class="box-title">generated JNI header</text>
+  <line x1="770" y1="498" x2="1110" y2="498" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="780" y="524" class="box-text">com_mrdonut_matrix_nativebridge_</text>
+  <text x="780" y="546" class="box-text">NativeMatrix.h</text>
+  <text x="780" y="578" class="box-text">Declares Java_* bridge signatures</text>
+
+  <rect x="1180" y="455" width="300" height="145" class="note" />
+  <text x="1200" y="490" class="note-text">JNI responsibility</text>
+  <text x="1200" y="518" class="note-text">Convert Java int[][] to C++ MatrixData</text>
+  <text x="1200" y="542" class="note-text">Invoke native engine functions</text>
+  <text x="1200" y="566" class="note-text">Map std::invalid_argument to</text>
+  <text x="1200" y="588" class="note-text">java.lang.IllegalArgumentException</text>
+
+  <rect x="50" y="680" width="1500" height="280" class="layer" />
+  <text x="75" y="715" class="layer-title">Native Matrix Engine Layer</text>
+
+  <rect x="120" y="750" width="460" height="165" class="box" />
+  <text x="140" y="780" class="box-title">cpp/include/matrix.h</text>
+  <line x1="130" y1="793" x2="570" y2="793" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="140" y="819" class="box-text">typedef MatrixData = vector&lt;vector&lt;jint&gt;&gt;</text>
+  <text x="140" y="841" class="box-text">+ matrixAddition(...)</text>
+  <text x="140" y="863" class="box-text">+ matrixSubtraction(...)</text>
+  <text x="140" y="885" class="box-text">+ matrixMultiplication(...)</text>
+  <text x="140" y="907" class="box-text">+ scalarMultiplication(...)</text>
+  <text x="140" y="929" class="box-text">+ transposeMatrix(...)</text>
+  <text x="140" y="951" class="box-text">+ validateRectangular(...)</text>
+
+  <rect x="640" y="750" width="520" height="185" class="box" />
+  <text x="660" y="780" class="box-title">cpp/src/matrix.cpp</text>
+  <line x1="650" y1="793" x2="1150" y2="793" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="660" y="819" class="box-text">- ensureRectangular(matrix, name)</text>
+  <text x="660" y="841" class="box-text">- validateSameSize(left, right)</text>
+  <text x="660" y="863" class="box-text">Implements arithmetic and transpose logic</text>
+  <text x="660" y="885" class="box-text">Throws std::invalid_argument on invalid input</text>
+  <text x="660" y="907" class="box-text">Current code assumes square-compatible sizes</text>
+  <text x="660" y="929" class="box-text">for multiplication and transpose allocation</text>
+
+  <rect x="1220" y="760" width="280" height="155" class="note" />
+  <text x="1240" y="795" class="note-text">Native core owns the real</text>
+  <text x="1240" y="819" class="note-text">matrix computation behavior.</text>
+  <text x="1240" y="855" class="note-text">Java side is currently a DTO</text>
+  <text x="1240" y="879" class="note-text">plus JNI facade.</text>
+
+  <path d="M 350 255 L 400 255" class="arrow" marker-end="url(#arrow)" />
+  <text x="360" y="245" class="arrow-label">passes int[][]</text>
+
+  <path d="M 760 255 L 900 255 L 900 455" class="arrow" marker-end="url(#arrow)" />
+  <text x="790" y="245" class="arrow-label">native call</text>
+
+  <path d="M 1010 525 L 760 525" class="arrow" marker-end="url(#arrow)" />
+  <text x="840" y="515" class="arrow-label">declares C signatures</text>
+
+  <path d="M 650 525 L 760 525" class="arrow" marker-end="url(#arrow)" />
+  <text x="665" y="515" class="arrow-label">includes</text>
+
+  <path d="M 390 600 L 390 750" class="arrow" marker-end="url(#arrow)" />
+  <text x="402" y="688" class="arrow-label">uses MatrixData API</text>
+
+  <path d="M 580 835 L 640 835" class="arrow" marker-end="url(#arrow)" />
+  <text x="585" y="825" class="arrow-label">implemented by</text>
+
+  <path d="M 920 325 L 920 390" class="arrow" stroke-dasharray="8 6" marker-end="url(#arrow-dashed)" />
+  <text x="935" y="366" class="arrow-label">planned app entry</text>
+
+  <path d="M 1170 325 L 1170 390" class="arrow" stroke-dasharray="8 6" marker-end="url(#arrow-dashed)" />
+  <text x="1185" y="366" class="arrow-label">planned orchestration</text>
+
+  <path d="M 1410 325 L 1410 390" class="arrow" stroke-dasharray="8 6" marker-end="url(#arrow-dashed)" />
+  <text x="1425" y="366" class="arrow-label">planned service API</text>
+
+  <rect x="70" y="995" width="1460" height="70" class="note" />
+  <text x="95" y="1032" class="note-text">Interpretation note: this UML follows the repository as-is on 2026-04-19. Main.java, MatrixController.java, and MatrixService.java exist but contain no implementation yet.</text>
+ </svg>
