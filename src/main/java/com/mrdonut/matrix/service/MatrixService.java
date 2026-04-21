@@ -22,12 +22,12 @@ public class MatrixService {
         return nativeMatrix.matrixMultiplication(left, right);
     }
 
-    public Matrix scalarMultiplication(Matrix left, Matrix right) {
-        return nativeMatrix.scalarMultiplication(left, right);
+    public Matrix scalarMultiplication(Matrix matrix, int scalar) {
+        return nativeMatrix.scalarMultiplication(matrix, scalar);
     }
 
-    public Matrix transposeMatrix(Matrix left, Matrix right) {
-        return nativeMatrix.transposeMatrix(left, right);
+    public Matrix transposeMatrix(Matrix matrix) {
+        return nativeMatrix.transposeMatrix(matrix);
     }
 
 }
