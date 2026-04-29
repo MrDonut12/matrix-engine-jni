@@ -1,7 +1,5 @@
-package com.mrdonut.matrix.controller
+package com.mrdonut.matrix.controller;
 
-import java.io.*;
-import java.util.*;
 import com.mrdonut.matrix.model.Matrix;
 import com.mrdonut.matrix.nativebridge.NativeMatrix;
 import com.mrdonut.matrix.service.MatrixService;
@@ -14,7 +12,6 @@ public class MatrixController {
         this.matrixService = new MatrixService();
     }
 
-
     public Matrix matrixAddition(Matrix left, Matrix right) {
         return matrixService.matrixAddition(left, right);
     }
@@ -22,7 +19,6 @@ public class MatrixController {
     public Matrix matrixSubtraction(Matrix left, Matrix right) {
         return matrixService.matrixSubtraction(left, right);
     }
-
 
     public Matrix matrixMultiplication(Matrix left, Matrix right) {
         return matrixService.matrixMultiplication(left, right);
@@ -35,6 +31,4 @@ public class MatrixController {
     public Matrix transposeMatrix(Matrix matrix) {
         return matrixService.transposeMatrix(matrix);
     }
-
-
 }

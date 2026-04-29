@@ -1,6 +1,6 @@
 package com.mrdonut.matrix.model;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Matrix {
 

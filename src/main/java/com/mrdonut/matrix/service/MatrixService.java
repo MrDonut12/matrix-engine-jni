@@ -1,10 +1,12 @@
-package com.mrdonut.matrix.service
+package com.mrdonut.matrix.service;
 
 import com.mrdonut.matrix.model.Matrix;
 import com.mrdonut.matrix.nativebridge.NativeMatrix;
 
 public class MatrixService {
+
     private final NativeMatrix nativeMatrix;
+
     public MatrixService() {
         this.nativeMatrix = new NativeMatrix();
     }
@@ -17,7 +19,6 @@ public class MatrixService {
         return nativeMatrix.matrixSubtraction(left, right);
     }
 
-
     public Matrix matrixMultiplication(Matrix left, Matrix right) {
         return nativeMatrix.matrixMultiplication(left, right);
     }
@@ -29,5 +30,4 @@ public class MatrixService {
     public Matrix transposeMatrix(Matrix matrix) {
         return nativeMatrix.transposeMatrix(matrix);
     }
-
 }
