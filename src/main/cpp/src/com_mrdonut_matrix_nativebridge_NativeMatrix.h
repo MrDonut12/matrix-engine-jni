@@ -12,7 +12,7 @@ extern "C" {
  * Method:    matrixaddition
  * Signature: ([[I[[I)[[I
  */
-JNIEXPORT jobjectArray JNICALL Java_com_mrdonut_matrix_nativebridge_NativeMatrix_matrixaddition
+JNIEXPORT jobjectArray JNICALL Java_com_mrdonut_matrix_nativebridge_NativeMatrix_matrixAddition
   (JNIEnv *, jobject, jobjectArray, jobjectArray);
 
 /*
@@ -20,7 +20,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_mrdonut_matrix_nativebridge_NativeMatrix
  * Method:    matrixsubtraction
  * Signature: ([[I[[I)[[I
  */
-JNIEXPORT jobjectArray JNICALL Java_com_mrdonut_matrix_nativebridge_NativeMatrix_matrixsubtraction
+JNIEXPORT jobjectArray JNICALL Java_com_mrdonut_matrix_nativebridge_NativeMatrix_matrixSubtraction
   (JNIEnv *, jobject, jobjectArray, jobjectArray);
 
 /*
