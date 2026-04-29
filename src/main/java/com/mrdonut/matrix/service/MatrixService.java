@@ -12,22 +12,27 @@ public class MatrixService {
     }
 
     public Matrix matrixAddition(Matrix left, Matrix right) {
-        return nativeMatrix.matrixAddition(left, right);
+        int[][] result = nativeMatrix.matrixAddition(left.toArray(), right.toArray());
+        return new Matrix(result);
     }
 
     public Matrix matrixSubtraction(Matrix left, Matrix right) {
-        return nativeMatrix.matrixSubtraction(left, right);
+        int[][] result = nativeMatrix.matrixSubtraction(left.toArray(), right.toArray());
+        return new Matrix(result);
     }
 
     public Matrix matrixMultiplication(Matrix left, Matrix right) {
-        return nativeMatrix.matrixMultiplication(left, right);
+        int[][] result = nativeMatrix.matrixMultiplication(left.toArray(), right.toArray());
+        return new Matrix(result);
     }
 
     public Matrix scalarMultiplication(Matrix matrix, int scalar) {
-        return nativeMatrix.scalarMultiplication(matrix, scalar);
+        int[][] result = nativeMatrix.scalarMultiplication(matrix.toArray(), scalar);
+        return new Matrix(result);
     }
 
     public Matrix transposeMatrix(Matrix matrix) {
-        return nativeMatrix.transposeMatrix(matrix);
+        int[][] result = nativeMatrix.transposeMatrix(matrix.toArray());
+        return new Matrix(result);
     }
 }

@@ -47,7 +47,7 @@ MatrixData matrixSubtraction(const MatrixData &left, const MatrixData &right) {
     return result;
 }
 
-MatrixData scalarMultiplication(const MatrixData &matrix, const jint &scalar) {
+MatrixData scalarMultiplication(const MatrixData &matrix, const jint scalar) {
     ensureRectangular(matrix, "matrix");
     MatrixData result(matrix.size(), std:: vector <jint> (matrix[0].empty() ? 0 : matrix[0].size(), 0));
 
